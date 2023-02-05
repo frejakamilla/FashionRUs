@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+.farve-linje {
+  background-color: rgb(168, 58, 58);
+  width: 100vw;
+  height: 6px;
+  margin: 0;
+  display: none;
+}
+header .main-nav {
+  border-bottom: #d0d1d3 1px solid;
+  padding: calc(100vh / 100) calc(100vw / 25);
+}
+main {
+  margin: calc(100vh / 100) calc(100vw / 25);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ––––––––––––––––––––––– Font-face ––––––––––––––––––––––– */
+
+/* ––––––––––––––––––––––– Fonts ––––––––––––––––––––––– */
+
+/* –––––––––––––––––––––– Navigationslinje –––––––––––––––––––––– */
+
+/* --- FashionRUs logo --- */
+.main-nav h1 {
+  color: black;
+  /* samler bogstaverne */
+  letter-spacing: -0.1rem;
+  font-family: Tiempos, Times New Roman, serif;
+}
+
+.main-nav h1 span {
+  display: inline-block;
+  transform: scaleX(-1) translateX(-0.2rem);
+  color: red;
+}
+.main-nav a {
+  display: block;
+  text-decoration: none;
+}
+
+.nav-link {
+  font-family: HelveticaNow, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.main-nav a:visited {
+  color: black;
+}
+
+/* --- navigations menu --- */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+.nav-item {
+  color: black;
+  font-size: 16px;
+  display: inline-block;
+  display: flex;
+  position: relative;
+}
+
+.nav-link {
+  color: black;
+}
+
+/* --- dropdown menu --- */
+.dropdown-menu {
+  display: none;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  width: 237.4px;
+}
+.nav-item:hover .dropdown-list {
+  display: block;
+  margin: 3px 10px;
+}
+
+.nav-item:hover i.dropdown-item {
+  width: 50px;
+  padding: 2px;
+  justify-self: center;
+}
+/* links i dropdown menu */
+.dropdown-item {
+  list-style: none;
+  display: inline-block;
+  display: flex;
+  position: relative;
+}
+/* styling af tekst i dropdown menu */
+.dropdown-link {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 3px 0;
+  transition: all 0.3s;
+}
+
+@media (min-width: 700px) {
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ––––––––––––––––––––––– Kategori ––––––––––––––––––––––– */
+.kategoriliste {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.kategoriliste a {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 2em 1em;
+  color: white;
+  background-color: #949394;
+  border-radius: 5px;
+}
+
+/* ––––––––––––––––––––––– Produktliste ––––––––––––––––––––––– */
+
+.produktgalleri {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 290px));
+  gap: 2rem;
+}
+
+.produktliste h2 {
+  padding: 15vh 0 0 0;
+  font-family: HelveticaNow, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.produktliste h3 {
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  font-weight: 400;
+  font-family: HelveticaNow, Helvetica, sans-serif;
+  text-transform: uppercase;
+  padding: 0 0 8px 0;
+}
+.produktliste h4 {
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  font-weight: 400;
+  font-family: Tiempos, Times New Roman, serif;
+}
+.new-price,
+.price,
+.discount {
+  font-family: Tiempos, Times New Roman, serif;
+}
+.new-price {
+  display: none;
+}
+.price {
+  color: black;
+}
+
+.discount {
+  display: none;
+}
+
+/* --- on sale --- */
+.produktliste article.onSale img {
+  position: relative;
+}
+
+.produktliste article.onSale::before {
+  content: "On sale";
+  font-family: HelveticaNow, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  font-weight: 400;
+  position: absolute;
+  background: rgb(207, 37, 37);
+  color: white;
+  padding: 0.3rem 1rem;
+  z-index: 1;
+  margin-top: 340px;
+}
+.produktliste article.onSale .discounted {
+  display: flex;
+  gap: 0.5em;
+}
+.produktliste article.onSale .discounted .price {
+  text-decoration: line-through;
+  color: rgb(95, 95, 95);
+}
+
+.produktliste article.onSale .discounted .new-price {
+  color: rgb(207, 37, 37);
+  font-weight: 600;
+  display: contents;
+}
+.produktliste article.onSale .discount {
+  color: rgb(207, 37, 37);
+  display: contents;
+}
+
+/* --- sold out --- */
+.produktliste article.soldOut::before {
+  content: "Sold Out";
+  font-family: HelveticaNow, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  font-weight: 400;
+  position: absolute;
+  background: gray;
+  color: white;
+  padding: 0.3rem 1rem;
+  margin: 0;
+  z-index: 1;
+}
+
+.produktliste article.soldOut img {
+  opacity: 0.4;
+}
+
+.produktliste img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  width: 290px;
+}
+
+/* ––––––––––––––––––––––– Produkt ––––––––––––––––––––––– */
+
+.produkt .img-container {
+  display: flex;
+  justify-content: space-around;
+}
+.produkt img {
+  max-width: 400px;
+}
+
+.produkt h2 {
+  font-size: 1.75rem;
+  letter-spacing: -0.28px;
+  line-height: 2rem;
+  font-weight: 600;
+  font-family: HelveticaNow, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+.produkt h3 {
+  font-size: 28px;
+  letter-spacing: -0.28px;
+  line-height: 2rem;
+  font-weight: 400;
+  font-family: Tiempos, Times New Roman, serif;
+}
+
+.produkt h4 {
+  font-size: 1rem;
+  letter-spacing: -0.16px;
+  line-height: 2.5rem;
+  font-weight: 700;
+  font-family: HelveticaNow, Helvetica, sans-serif;
+}
+.produkt .pris {
+  font-size: 1.375rem;
+  letter-spacing: -0.22px;
+  line-height: 1.75rem;
+  font-weight: 400;
+  font-family: HelveticaNow, Helvetica, sans-serif;
+}
+
+.beskrivelse {
+  margin: 1em 0 0 0;
+}
+dt {
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-family: HelveticaNow, Helvetica, sans-serif;
+}
+dd {
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  font-weight: 400;
+  font-family: HelveticaNow, Helvetica, sans-serif;
+}
+
+.info {
+  margin-top: 2em;
+}
+/* --- vælg størrelse og tilføj til kurv --- */
+
+.purchaseBox select,
+.purchaseBox button {
+  margin-top: 1rem;
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 400;
+  border: black 2px solid;
+}
+
+.purchaseBox select {
+  padding-left: 0.5em;
+  color: #66676e;
+  margin-top: 40px;
+}
+
+.purchaseBox button {
+  color: white;
+  background-color: black;
+}
+/* --- info boks --- */
+
+dl dt {
+  float: left;
+  clear: left;
+  margin-right: 10px;
+}
+dl dd {
+  margin-left: 0px;
+}
+
+@media (min-width: 900px) {
+  .desktop-layout {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .produkt-indhold {
+    margin-left: 8.33333%;
+  }
+  .info {
+    align-self: baseline;
+  }
+  .produkt img {
+    max-width: 45vw;
+  }
+
+  .farve-linje {
+    display: block;
+  }
+}
