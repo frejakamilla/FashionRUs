@@ -28,10 +28,8 @@ function visProdukt(produkt) {
   }
   if (produkt.discount) {
     klon.querySelector("article").classList.add("onSale");
-    klon.querySelector(".new-price").textContent = produkt.price + ",00 kr.";
-    //få den til at gange prisen med tilbuddet så den gamle pris står der
-    //      produkt.price/((100-produkt.discount)/100)
-    //      klon.querySelector(".price").textContent = produkt.price + ",00 kr.";
+    klon.querySelector(".price").textContent = produkt.price + ",00 kr.";
+    klon.querySelector(".new-price").textContent = Math.round(produkt.price - (produkt.price / 100) * produkt.discount) + ",00 kr.";
     klon.querySelector(".discount").textContent = "-" + produkt.discount + "%";
   }
   //7. appende
