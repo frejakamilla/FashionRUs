@@ -79,6 +79,10 @@ img {
   color: black;
 }
 
+.nav-item:hover .nav-link {
+  color: purple;
+}
+
 /* --- dropdown menu --- */
 .dropdown-menu {
   display: none;
@@ -118,6 +122,10 @@ img {
   text-decoration: none;
   margin: 3px 0;
   transition: all 0.3s;
+}
+
+.dropdown-link:hover {
+  font-weight: 500;
 }
 
 @media (min-width: 700px) {
