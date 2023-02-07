@@ -1,9 +1,15 @@
 console.log("produktliste.js");
 //https://kea-alt-del.dk/t7/api/products
 
+const urlParams = new URLSearchParams(window.location.search);
+const cat = urlParams.get("cat");
+const url = `https://kea-alt-del.dk/t7/api/products?limit=100&category=${cat}`;
+
+document.querySelector(".produktliste h2").textContent = cat;
+
 //1. grab the data
 async function hentData() {
-  const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=100");
+  const response = await fetch(url);
   const data = await response.json();
 
   //2. Loope + for hver
