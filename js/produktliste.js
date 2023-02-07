@@ -3,7 +3,7 @@ console.log("produktliste.js");
 
 //1. grab the data
 async function hentData() {
-  const response = await fetch("https://kea-alt-del.dk/t7/api/products");
+  const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=100");
   const data = await response.json();
 
   //2. Loope + for hver
@@ -23,10 +23,10 @@ function visProdukt(produkt) {
   const klon = template.cloneNode(true);
   //6. skifte data
   klon.querySelector("h3").textContent = produkt.productdisplayname;
-
   klon.querySelector("h4").textContent = produkt.brandname;
   klon.querySelector(".price").textContent = produkt.price + ",00 kr.";
   klon.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${produkt.id}.webp`;
+  klon.querySelector("a").href = "produkt.html?id=" + produkt.id;
   if (produkt.soldout) {
     klon.querySelector("article").classList.add("soldOut");
   }
