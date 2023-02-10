@@ -144,7 +144,7 @@ img {
 
   /* display: grid;*/
   /* grid-template-columns: repeat(3, 30vw); */
-  /* grid-template-columns: repeat(auto-fill, minmax(200px, 430px));  */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   /* grid-template-columns: repeat(auto-fill, minmax(250px, 430px)); */
   /* gap: 1em; */
 }
@@ -159,18 +159,18 @@ img {
   border-radius: 5px;
 }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   .kategoriliste {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+*/
 
 @media (min-width: 900px) {
   .kategoriliste {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 /* ––––––––––––––––––––––– Produktliste ––––––––––––––––––––––– */
 
 .produktgalleri {
@@ -184,6 +184,7 @@ img {
   font-family: HelveticaNow, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 2rem;
+  text-transform: capitalize;
 }
 .produktliste h3 {
   font-size: 0.875rem;
